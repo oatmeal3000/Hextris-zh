@@ -202,9 +202,17 @@ function initialize(a) {
         ga('create', 'UA-51272720-1', 'teamsnowman.github.io');
         ga('send', 'pageview');
 
+
+        //BackButton按钮
+        function onBackKeyDown(){ 
+                navigator.app.exitApp(); 
+        } 
+
+
         document.addEventListener("pause", handlePause, false);
-        document.addEventListener("backbutton", handlePause, false);
+        document.addEventListener("backbutton", onBackKeyDown, false);
         document.addEventListener("menubutton", handlePause, false); //menu button on android
+
 
         setTimeout(function() {
             if (settings.platform == "mobile") {
